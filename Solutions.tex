@@ -1,0 +1,49 @@
+
+\documentclass[letterpaper, reqno,11pt]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{color,latexsym,amsmath,amssymb}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\NN}{\mathbb{N}}
+\begin{document}
+\pagenumbering{arabic}
+\title{Selected Exercise Solutions for The Art Of Computer Programming}
+\author{Yuchong Pan}
+\date{\today}
+\newtheorem{thm}{Theorem}
+\maketitle
+%
+
+\section{Basic Concepts}
+
+\subsection{Algorithms}
+
+\begin{enumerate}
+    \item[5.] The procedure fails to be a genuine algorithm for the following three points:
+    \begin{itemize}
+        \item \emph{Finiteness.} After one finishes all the 12 chapters, the procedure suggests starting from Chapter 1.
+        \item \emph{Output.} The procedure does not have outputs.
+        \item \emph{Effectiveness.} It is unclear whether each step can be completed in a finite amount of time. For instance, there are open problems in the exercises which no one knows the solution.
+    \end{itemize}
+    The procedure has the following differences in format between it and Algorithm E:
+    \begin{itemize}
+        \item The procedure does not include a paragraph specifying the inputs and the purpose (outputs) of the procedure.
+        \item Each step of the procedure does not have a phrase that briefly summarizes the principal content of the step.
+    \end{itemize}
+    \item[7.] Let $n \in \NN$. If $n > m$, then after E1, $r = m \neq 0$. Therefore, in E3, $m$ and $n$ are essentially exchanged. This reduces to the definition of $T_m$. Since $T_m$ is well-defined, then so is $U_m$, and $U_m = T_m + 1$.
+    \item[9.] We say that ``$C_2$ is a representation of $C_1$'' or ``$C_2$ simulates $C_1$'' if
+    \begin{itemize}
+        \item there exists $\delta : Q_1 \to 2^{Q_2}$ such that for all $q_1, q_2 \in Q_1$ with $q_1 \neq q_2$, $\delta\left(q_1\right) \cap \delta\left(q_2\right) = \emptyset$;
+        \item for all $q \in Q_1$ and $q' \in \delta(q)$, there exist $n \in \NN$ and $q_1', \ldots, q_n' \in Q_2$ such that
+        \begin{align*}
+            q_1' &= f_2\left(q'\right), \\
+            q_{i + 1}' &= f_2\left(q_i'\right), && \forall i = 1, \ldots, n - 1, \\
+            q_n' &\in \delta\left(f_1(q)\right).
+        \end{align*}
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
